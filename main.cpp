@@ -45,8 +45,8 @@ int main()
     int delayTime = 25000;
 
 
-    ifstream MyReadFile("/home/ducdung/Downloads/adventure-time-s01-outsync/S01E01 - Slumber Party Panic.eng.srt");
-    ofstream MyWriteFile("S01E01_synced.eng.srt");
+    ifstream MyReadFile("/home/ducdung/Downloads/adventure-time-s01-outsync/S01E02 - Trouble in Lumpy Space.eng.srt");
+    ofstream MyWriteFile("S01E02_synced.eng.srt");
 
     while(getline(MyReadFile, myText)){
         if(myText[2]==':'){             // check if the line contain the ':' character
