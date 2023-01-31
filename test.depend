@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1675099808 source:/home/ducdung/Downloads/test/main.cpp
-	<iostream>
-	<fstream>
-	<ctype.h>
-	<string>
-
