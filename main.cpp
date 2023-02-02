@@ -54,7 +54,7 @@ string timestampToString(Timestamp t_stamp)
     return s;
 }
 
-string increaseTime(string strTime, int delayTime)
+string getNewTimestamp(string strTime, int delayTime)
 {
     Timestamp t_stamp;
     Timestamp new_t_stamp;
@@ -90,10 +90,10 @@ int main()
         if(myText[2]==':'){             // check if the line contain the ':' character
 
             beginTimestamp = myText.substr(0, 12);
-            t1 = increaseTime(beginTimestamp, delayTime);
+            t1 = getNewTimestamp(beginTimestamp, delayTime);
 
             endTimestamp = myText.substr(17, 12);
-            t2 = increaseTime(endTimestamp, delayTime);
+            t2 = getNewTimestamp(endTimestamp, delayTime);
 
             newTimestamp = t1 + " --> " + t2;
             MyWriteFile << newTimestamp << "\r";
