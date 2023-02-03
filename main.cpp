@@ -70,21 +70,24 @@ string getNewTimestamp(string strTime, int delayTime)
     return timestampToString(new_t_stamp);
 }
 
-int main()
+int main(int argc, char **argv)
 {
     string myText;
     string beginTimestamp;
     string endTimestamp;
-    struct tm tm = {0};
-    char buffer [80];
     string t1;
     string t2;
     string newTimestamp;
     int delayTime = 25000;
+    string inputPath(argv[1]);
+//    string inputPath = "/home/ducdung/Downloads/adventure-time-s01-outsync/S01E03 - Prisoners of Love.eng.srt";
+    string episodeName = inputPath.substr(inputPath.find("S01E") + 1);
+    string outputPath = "S01E" + episodeName.substr(3, 2) + "_synced.eng.srt";
 
+    ifstream MyReadFile(inputPath.c_str());
+    ofstream MyWriteFile(outputPath.c_str());
 
-    ifstream MyReadFile("/home/ducdung/Downloads/adventure-time-s01-outsync/S01E03 - Prisoners of Love.eng.srt");
-    ofstream MyWriteFile("S01E03_synced.eng.srt");
+//    cout << episodeName << "\n";
 
     while(getline(MyReadFile, myText)){
         if(myText[2]==':'){             // check if the line contain the ':' character
@@ -104,5 +107,6 @@ int main()
     }
 
     MyWriteFile.close();
+    cout << "Write new subtitle to " << outputPath << ": Done!" << "\n";
     return 0;
 }
