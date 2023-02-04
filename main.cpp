@@ -78,7 +78,7 @@ int main(int argc, char **argv)
     string t1;
     string t2;
     string newTimestamp;
-    int delayTime = 25000;
+    int delayTime = atoi(argv[2]);
     string inputPath(argv[1]);
 //    string inputPath = "/home/ducdung/Downloads/adventure-time-s01-outsync/S01E03 - Prisoners of Love.eng.srt";
     string episodeName = inputPath.substr(inputPath.find("S01E") + 1);
